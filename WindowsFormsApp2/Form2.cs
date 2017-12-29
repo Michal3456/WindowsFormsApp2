@@ -39,14 +39,17 @@ namespace WindowsFormsApp2
             //sda.Fill(dt);
             if (Dr.HasRows == true)
             {
-                MessageBox.Show("Cor");
+                MessageBox.Show("Zalogowano.");
                     this.Hide();
-                    MainMain fm2 = new MainMain();
+                    StosMain fm2 = new StosMain();
                     fm2.Show();
                 }
-            else
+            else if(txtLogNick.Text == "" || txtLogHaslo.Text =="")
+                    MessageBox.Show("Prosze wypelnic wszytkie pola.");
+
+                else
             {
-                MessageBox.Show("Prosze wypelnic wszytkie pola.");
+                MessageBox.Show("Zle haslo lub Nick.");
             }
         }catch(Exception ex)
             {
@@ -62,6 +65,13 @@ namespace WindowsFormsApp2
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 fm2 = new Form1();
+            fm2.Show();
         }
     }
 }

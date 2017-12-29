@@ -63,8 +63,20 @@
     <Compile Include="MainMain.Designer.cs">
       <DependentUpon>MainMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produkty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkty.Designer.cs">
+      <DependentUpon>Produkty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StosMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StosMain.Designer.cs">
+      <DependentUpon>StosMain.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMain.resx">
       <DependentUpon>MainMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkty.resx">
+      <DependentUpon>Produkty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +98,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StosMain.resx">
+      <DependentUpon>StosMain.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
