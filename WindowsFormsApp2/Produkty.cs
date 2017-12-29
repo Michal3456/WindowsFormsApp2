@@ -138,5 +138,27 @@ namespace WindowsFormsApp2
             }
            
         }
+        //usuwanie
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string connectionString = @"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;";
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+            var sqlQuery = "";
+            if (IfProduktistnieje(sqlCon, textBox1.Text))
+            {
+                sqlCon.Open();
+                sqlQuery = @"DELETE FROM [Produkty] WHERE [KodProduktu] = '" + textBox1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
+                cmd.ExecuteNonQuery();
+                sqlCon.Close();
+            }
+            else
+            {
+                MessageBox.Show("Rekord nie istnieje.","bład");
+            }
+
+            LoadData();
+        }
     }
 }

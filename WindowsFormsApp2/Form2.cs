@@ -26,6 +26,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             try
             { 
             SqlConnection con = new SqlConnection(connectionString);
@@ -39,17 +40,17 @@ namespace WindowsFormsApp2
             //sda.Fill(dt);
             if (Dr.HasRows == true)
             {
-                MessageBox.Show("Zalogowano.");
+                MessageBox.Show("Zalogowano.","Dobra wiadomosc.");
                     this.Hide();
                     StosMain fm2 = new StosMain();
                     fm2.Show();
                 }
             else if(txtLogNick.Text == "" || txtLogHaslo.Text =="")
-                    MessageBox.Show("Prosze wypelnic wszytkie pola.");
+                    MessageBox.Show("Prosze wypelnic wszytkie pola.", "Blad.");
 
                 else
             {
-                MessageBox.Show("Zle haslo lub Nick.");
+                MessageBox.Show("Zle haslo lub Nick.","Blad.");
             }
         }catch(Exception ex)
             {
