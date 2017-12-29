@@ -73,5 +73,20 @@ namespace WindowsFormsApp2
             Form1 fm2 = new Form1();
             fm2.Show();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           
+                Form3 fm3 = new Form3();
+            fm3.TopLevel = true;
+            fm3.Show();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form3 fm3 = new Form3();
+            fm3.TopLevel = true;
+            fm3.Show();
+        }
     }
 }
