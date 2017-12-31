@@ -26,8 +26,18 @@ namespace WindowsFormsApp2
 
         private void produktyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Produkty pro = new Produkty();
-            pro.MdiParent = this;
+            LogAdm log = new LogAdm();
+                log.TopLevel = true;
+            log.Show();
+            //Produkty pro = new Produkty();
+            //pro.MdiParent = this;
+            //pro.Show();
+        }
+
+        private void produktyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form5 pro = new Form5();
+            pro.TopLevel = true;
             pro.Show();
         }
     }

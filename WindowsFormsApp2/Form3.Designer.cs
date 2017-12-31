@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnWyslij = new System.Windows.Forms.Button();
             this.Ustawienia = new System.Windows.Forms.GroupBox();
+            this.txtsmtp = new System.Windows.Forms.TextBox();
             this.chbssl = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPort = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtImie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtsmtp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -156,6 +156,15 @@
             this.Ustawienia.TabStop = false;
             this.Ustawienia.Text = "Ustawienia";
             // 
+            // txtsmtp
+            // 
+            this.txtsmtp.Location = new System.Drawing.Point(254, 87);
+            this.txtsmtp.Name = "txtsmtp";
+            this.txtsmtp.Size = new System.Drawing.Size(207, 22);
+            this.txtsmtp.TabIndex = 15;
+            this.txtsmtp.Text = "smtp.gmail.com";
+            this.txtsmtp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtsmtp_MouseMove);
+            // 
             // chbssl
             // 
             this.chbssl.Location = new System.Drawing.Point(353, 22);
@@ -223,15 +232,6 @@
             this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 10;
             this.label6.Text = "Nick:";
-            // 
-            // txtsmtp
-            // 
-            this.txtsmtp.Location = new System.Drawing.Point(254, 87);
-            this.txtsmtp.Name = "txtsmtp";
-            this.txtsmtp.Size = new System.Drawing.Size(207, 22);
-            this.txtsmtp.TabIndex = 15;
-            this.txtsmtp.Text = "smtp.gmail.com";
-            this.txtsmtp.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtsmtp_MouseMove);
             // 
             // label9
             // 

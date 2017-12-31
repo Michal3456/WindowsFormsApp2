@@ -49,6 +49,8 @@
             this.produktyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaProduktowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stosListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -61,8 +63,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.listaProduktowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stosListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produktyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -74,9 +75,10 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
             this.viewMenu,
-            this.produktyToolStripMenuItem,
+            this.produktyToolStripMenuItem1,
             this.stosToolStripMenuItem,
-            this.raportToolStripMenuItem});
+            this.raportToolStripMenuItem,
+            this.produktyToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -211,8 +213,8 @@
             // produktyToolStripMenuItem
             // 
             this.produktyToolStripMenuItem.Name = "produktyToolStripMenuItem";
-            this.produktyToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.produktyToolStripMenuItem.Text = "Produkty";
+            this.produktyToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+            this.produktyToolStripMenuItem.Text = "AdminProdukty";
             this.produktyToolStripMenuItem.Click += new System.EventHandler(this.produktyToolStripMenuItem_Click);
             // 
             // stosToolStripMenuItem
@@ -229,6 +231,18 @@
             this.raportToolStripMenuItem.Name = "raportToolStripMenuItem";
             this.raportToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.raportToolStripMenuItem.Text = "Raport";
+            // 
+            // listaProduktowToolStripMenuItem
+            // 
+            this.listaProduktowToolStripMenuItem.Name = "listaProduktowToolStripMenuItem";
+            this.listaProduktowToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.listaProduktowToolStripMenuItem.Text = "Lista produktow";
+            // 
+            // stosListToolStripMenuItem
+            // 
+            this.stosListToolStripMenuItem.Name = "stosListToolStripMenuItem";
+            this.stosListToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.stosListToolStripMenuItem.Text = "Stos list";
             // 
             // toolStrip
             // 
@@ -330,17 +344,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(38, 20);
             this.toolStripStatusLabel.Text = "Stan";
             // 
-            // listaProduktowToolStripMenuItem
+            // produktyToolStripMenuItem1
             // 
-            this.listaProduktowToolStripMenuItem.Name = "listaProduktowToolStripMenuItem";
-            this.listaProduktowToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.listaProduktowToolStripMenuItem.Text = "Lista produktow";
-            // 
-            // stosListToolStripMenuItem
-            // 
-            this.stosListToolStripMenuItem.Name = "stosListToolStripMenuItem";
-            this.stosListToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.stosListToolStripMenuItem.Text = "Stos list";
+            this.produktyToolStripMenuItem1.Name = "produktyToolStripMenuItem1";
+            this.produktyToolStripMenuItem1.Size = new System.Drawing.Size(79, 24);
+            this.produktyToolStripMenuItem1.Text = "Produkty";
+            this.produktyToolStripMenuItem1.Click += new System.EventHandler(this.produktyToolStripMenuItem1_Click);
             // 
             // StosMain
             // 
@@ -402,6 +411,7 @@
         private System.Windows.Forms.ToolStripMenuItem raportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaProduktowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stosListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produktyToolStripMenuItem1;
     }
 }
 

@@ -76,7 +76,7 @@ namespace WindowsFormsApp2
 private void txtsmtp_MouseMove(object sender, MouseEventArgs e)
         {
             ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(this.txtImie, "Tutaj wpisz server z ktorego sklada sie adres poczty elektronicznej.");
+            toolTip1.SetToolTip(this.txtsmtp, "Tutaj wpisz server z ktorego sklada sie adres poczty elektronicznej.");
         }
     }
 

@@ -46,11 +46,11 @@ namespace WindowsFormsApp2
             if(IfProduktistnieje(sqlCon, textBox1.Text))
                 {
                     sqlQuery = @"UPDATE [dbo].[Produkty]
-   SET [NazwaProduktu] = '" + textBox2.Text + "' ,[Status] = '" + status + "' WHERE [KodProduktu] = '" + textBox1.Text + "'";
+   SET [NazwaProduktu] = '" + textBox2.Text + "' ,[Status] = '" + status + "',[Koszt]='"+textBox3.Text+"' WHERE [KodProduktu] = '" + textBox1.Text + "'";
                 }
                 else
                 {
-                    sqlQuery = @"INSERT INTO[dbo].[Produkty] ([KodProduktu] ,[NazwaProduktu]  ,[Status]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + status + "')";
+                    sqlQuery = @"INSERT INTO[dbo].[Produkty] ([KodProduktu] ,[NazwaProduktu]  ,[Status],[Koszt]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + status + "','" + textBox3.Text + "')";
                 }
 
             SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
@@ -65,7 +65,7 @@ namespace WindowsFormsApp2
             //Czytanie danych
            // string connectionString = @"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;";
             SqlConnection sqlCon2 = new SqlConnection(@"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status]FROM[RejestracjaUzytkownika].[dbo].[Produkty]", sqlCon2);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty]", sqlCon2);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.Rows.Clear();
@@ -82,6 +82,8 @@ namespace WindowsFormsApp2
                 {
                     dataGridView1.Rows[n].Cells[2].Value = "Niedostepny";
                 }
+                //1
+                dataGridView1.Rows[n].Cells[3].Value = item["Koszt"].ToString();
                 //Czytanie danych
                 LoadData();
               
@@ -103,7 +105,7 @@ namespace WindowsFormsApp2
             //Czytanie danych
             // string connectionString = @"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;";
             SqlConnection sqlCon2 = new SqlConnection(@"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;");
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status]FROM[RejestracjaUzytkownika].[dbo].[Produkty]", sqlCon2);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty]", sqlCon2);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.Rows.Clear();
@@ -120,6 +122,8 @@ namespace WindowsFormsApp2
                 {
                     dataGridView1.Rows[n].Cells[2].Value = "Niedostepny";
                 }
+                //1
+                dataGridView1.Rows[n].Cells[3].Value = item["Koszt"].ToString();
 
             }
         }
@@ -136,7 +140,9 @@ namespace WindowsFormsApp2
             {
                 comboBox1.SelectedIndex = 1;
             }
-           
+            //1
+            textBox3.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
+
         }
         //usuwanie
         private void button1_Click(object sender, EventArgs e)
