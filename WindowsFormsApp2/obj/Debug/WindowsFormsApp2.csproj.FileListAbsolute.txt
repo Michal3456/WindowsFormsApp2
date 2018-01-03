@@ -193,3 +193,4 @@ D:\Programy\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.XtraRep
 D:\Programy\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.licenses
 D:\Programy\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.LogAdm.resources
 D:\Programy\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form5.resources
+D:\Programy\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form6.resources

@@ -47,6 +47,7 @@ namespace WindowsFormsApp2
                 {
                     sqlQuery = @"UPDATE [dbo].[StosStos]
    SET [NazwaProduktu] = '" + textBox2.Text + "' ,[Status] = '" + status + "',[Koszt]='" + textBox3.Text + "' WHERE [KodProduktu] = '" + textBox1.Text + "'";
+                    MessageBox.Show("Produkt juz jest w koszyku.", "Wiadomosc");
                 }
                 else
                 {
@@ -86,10 +87,11 @@ namespace WindowsFormsApp2
                 //1
                 dataGridView1.Rows[n].Cells[3].Value = item["Koszt"].ToString();
                 //Czytanie danych
-                LoadData1();
+              //  LoadData1();
                 LoadData2();
             }
         }
+
         private bool IfProduktistnieje1(SqlConnection sqlCon, string KodProduktu)
         {
             SqlConnection sqlCon2 = new SqlConnection(@"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;");
@@ -246,28 +248,52 @@ namespace WindowsFormsApp2
             ToolTip toolTip1 = new ToolTip();
             toolTip1.SetToolTip(this.button1, "Aby dodac produkt do koszyka kliknij dwa razy na rekord produktu z listy produktow.");
         }
-
+        //Filtr
         private void button3_Click(object sender, EventArgs e)
         {
 
 
             try
             {
+                if (comboBox2.Text == "Nazwa Produktu")
+                {
+                   // dataGridView2.ClearSelection();
+                    string connectionString = @"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;";
+                    SqlConnection sqlCon = new SqlConnection(connectionString);
+                    SqlDataAdapter sda = new SqlDataAdapter(@"SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty] WHERE [NazwaProduktu] like '%"  + txtSzukKod.Text +  "%'", sqlCon);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    //dataGridView1.DataSource = dt;
+                    dataGridView1.Rows.Clear();
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        int n = dataGridView1.Rows.Add();
+                        dataGridView1.Rows[n].Cells[0].Value = item["KodProduktu"].ToString();
+                        dataGridView1.Rows[n].Cells[1].Value = item["NazwaProduktu"].ToString();
+                        if ((bool)item["Status"])
+                        {
+                            dataGridView1.Rows[n].Cells[2].Value = "Dostepny";
+                        }
+                        else
+                        {
+                            dataGridView1.Rows[n].Cells[2].Value = "Niedostepny";
+                        }
+                        //1
+                        dataGridView1.Rows[n].Cells[3].Value = item["Koszt"].ToString();
+
+                    }
+                }
 
 
-                string connectionString = @"Data Source=DESKTOP-T2UI567\SQLEXPRESS;Initial Catalog=RejestracjaUzytkownika;Integrated Security=True;";
-                SqlConnection sqlCon = new SqlConnection(connectionString);
+                /*
                 sqlCon.Open();
-                var sqlQuery = "";
-                bool status = false;
-                if (comboBox2.SelectedIndex == 0)
+                var sqlQuery = @"SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty] WHERE [NazwaProduktu]= '" + txtSzukKod.Text + "'";
+               // bool status = false;
+                if (comboBox2.SelectedIndex == 1)
                 {
-                    sqlQuery = @"SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty] WHERE [KodProduktu]= '" + textBox2.Text + "'";
+                    sqlQuery = @"SELECT TOP (1000) [KodProduktu],[NazwaProduktu],[Status],[Koszt]FROM[RejestracjaUzytkownika].[dbo].[Produkty] WHERE [NazwaProduktu]= '" + txtSzukKod.Text + "'";
                 }
-                else
-                {
-                    status = false;
-                }
+               
                 
                 if (IfProduktistnieje2(sqlCon, textBox1.Text))
                 {
@@ -279,15 +305,27 @@ namespace WindowsFormsApp2
                     sqlQuery = @"INSERT INTO [StosStos] ([KodProduktu] ,[NazwaProduktu]  ,[Status],[Koszt]) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + status + "','" + textBox3.Text + "')";
                     MessageBox.Show("Dodano do koszyka.");
                 }
-
+                
                 SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
                 cmd.ExecuteNonQuery();
+                //LoadData1();
                 sqlCon.Close();
+                */
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     } 

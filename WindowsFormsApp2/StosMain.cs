@@ -40,5 +40,12 @@ namespace WindowsFormsApp2
             pro.TopLevel = true;
             pro.Show();
         }
+
+        private void koszykToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 pro = new Form6();
+            pro.TopLevel = true;
+            pro.Show();
+        }
     }
 }
